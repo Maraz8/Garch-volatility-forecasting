@@ -1,5 +1,5 @@
 # Volatility Forecasting and Risk Backtesting Framework  
-**Author: Filippo Tiberi — BSc Finance, Bocconi University**
+**Author: Filippo Tiberi & Alessandro Marazzi — BSc Finance, Bocconi University**
 
 This project provides an end-to-end framework for volatility modelling, forecasting and Value-at-Risk (VaR) backtesting.  
 It extends the original architecture with additional models and risk-testing functionality to support quantitative research applications.
