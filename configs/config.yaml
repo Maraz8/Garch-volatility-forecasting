@@ -1,0 +1,41 @@
+# FinRisk Analytics Configuration
+
+data:
+  start_date: "2018-01-01"
+  end_date: "2025-01-01"
+  train_end: "2023-12-31"
+  val_end: "2024-06-30"
+  
+assets:
+  equities: [SPY, XLK, XLF, XLV, XLE, XLI]
+  fixed_income: [TLT, IEF]
+  alternatives: [GLD]
+  crypto: [BTC/USDT, ETH/USDT, SOL/USDT]
+  macro: [^VIX]
+  
+  # Deep-dive case studies
+  case_studies: [SPY, BTC, ETH, TLT]
+
+volatility_models:
+  garch:
+    p: 1  # GARCH order
+    q: 1
+  egarch:
+    p: 1
+    o: 1  # Asymmetry parameter
+    q: 1
+  lstm:
+    units: 64
+    sequence_length: 20
+    dropout: 0.2
+
+var:
+  confidence_levels: [0.95, 0.99]
+  methods: ['historical', 'parametric', 'parametric_t', 'cornish_fisher', 'filtered_hs']
+  
+backtesting:
+  kupiec_significance: 0.05
+  
+correlation:
+  rolling_window: 30
+  regimes: ['bull', 'bear', 'sideways']
